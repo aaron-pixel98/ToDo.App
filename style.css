@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+li {
+    background: #334155;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.check {
+    width: 18px;
+    height: 18px;
+    accent-color: #22c55e;
+}
+
+.delete {
+    background: transparent;
+    color: #ef4444;
+    font-size: 16px;
+}
+
+.done .text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+/* ===== colores base ===== */
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --card: #ffffff;
+}
+
+/* ===== modo oscuro ===== */
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+}
+
+/* ===== aplicar colores ===== */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+li {
+  background: var(--card);
+}
+
+/* botón */
+#themeToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* animación suave al eliminar */
+li.removing {
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* estado inicial al crear */
+li.new {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* estado visible */
+li.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* Ocultar checkbox real */
+.task .check {
+  display: none;
+}
+
+/* Círculo */
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Estado marcado */
+.task .check:checked + .checkmark {
+  background-color: #4ade80;
+  border-color: #4ade80;
+}
+
+/* Palomita */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Mostrar palomita cuando está marcado */
+.task .check:checked + .checkmark::after {
+  display: block;
+}
+
+/* Forma de la palomita */
+.checkmark::after {
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.task {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+/* transición suave en todas las tareas */
+#taskList li {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+/* tarea que se está arrastrando */
+.dragging {
+  opacity: 0.5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.03);
+  cursor: grabbing;
+}
+.drag-over {
+  transform: translateY(4px);
+}

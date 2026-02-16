@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="themeToggle">🌙</button>
+    <div class="app">
+        <h1>To-Do</h1>
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Nueva tarea..."  />
+            <button id="addBtn">Agregar</button>
+        </div>
+        <div class="filters">
+            <button data-filter="all" class="active">Todas</button>
+            <button data-filter="pending">Pendientes</button>
+            <button data-filter="done">Completadas</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div class="footer">
+            <span id="taskCounter">0 tareas restantes</span>
+            <button id="clearCompleted">Limpiar completadas</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
